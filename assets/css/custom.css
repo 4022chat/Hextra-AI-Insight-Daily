@@ -362,3 +362,23 @@ html:not(.dark) .footer-copyright a:hover {
   /* 悬停时变为纯黑色，并保持下划线，提供清晰的视觉反馈 */
   color: #000000;
 }
+
+/* =================================================================== */
+/*                      WWADS 自定义样式                               */
+/* =================================================================== */
+
+/* 移除广告容器默认背景，保持版面干净 */
+.wwads-cn,
+.wwads-cn .wwads-content,
+.wwads-cn .wwads-img,
+.wwads-cn .wwads-text,
+.wwads-cn .wwads-poweredby {
+  background: transparent !important;
+}
+
+/* 暗色模式文字颜色优化 */
+html.dark .wwads-cn .wwads-text,
+html.dark .wwads-cn .wwads-poweredby,
+html.dark .wwads-cn .wwads-poweredby a {
+  color: #d1d5db !important;
+}
