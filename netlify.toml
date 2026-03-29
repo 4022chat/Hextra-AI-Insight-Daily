@@ -1,11 +1,15 @@
 [build]
-publish = "public"
-command = "hugo --gc --minify -b ${URL}"
+  # 构建前执行：强制Git用HTTPS拉取GitHub依赖（解决SSH权限问题）
+  prebuild = "git config --global url.\"https://github.com/\".insteadOf \"git@github.com:\""
+  # 原有的Hugo构建命令不变
+  command = "hugo --gc --minify -b ${URL}"
+  publish = "public"
 
-[build.environment]
-HUGO_VERSION = "0.147.9"
+[context.production.environment]
+  HUGO_VERSION = "0.147.9"
+  HUGO_ENV = "production"
 
-
+# 你的原有重定向配置保留
 [[redirects]]
   from = "https://hextra-ai-insight-daily.netlify.app/*"
   to = "https://ai.hubtoday.app/:splat"
